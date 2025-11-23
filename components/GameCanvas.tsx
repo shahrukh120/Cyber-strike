@@ -539,7 +539,8 @@ const GameCanvas: React.FC<GameCanvasProps> = ({ onGameOver, gameStatus }) => {
         </>
       )}
       
-      <div className="text-center text-gray-500 mt-3 text-xs font-mono">
+
+<div className="hidden md:block text-center text-gray-500 mt-3 text-xs font-mono">
         <span className="mr-6 border-b-2 border-blue-500 pb-1">P1: WASD + SPACE (Cut) + S (Slide)</span>
         <span className="border-b-2 border-red-500 pb-1">P2: ARROWS + ENTER (Cut) + DOWN (Slide)</span>
       </div>
