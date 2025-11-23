@@ -26,9 +26,11 @@ function App() {
   };
 
   return (
-    // UPDATED: Full screen, black background, no padding
-// Changed h-screen to h-[100dvh] to account for mobile address bars
-<div className="w-screen h-[100dvh] bg-black overflow-hidden flex items-center justify-center">
+    // 1. Outer Container: Handles the Mobile Viewport (100dvh) and Centering
+    <div className="w-screen h-[100dvh] bg-black overflow-hidden flex items-center justify-center">
+      
+      {/* 2. Inner Wrapper: This is crucial for "stacking" the menu on top of the game */}
+      <div className="relative w-full h-full max-w-[1000px] max-h-[600px]"> 
         
         {/* Game Layer */}
         <GameCanvas 
@@ -37,7 +39,6 @@ function App() {
         />
 
         {/* Overlay Menus */}
-        {/* These will sit on top of the full-screen canvas */}
         {gameState === 'MENU' && <Menu onStart={handleStart} />}
         
         {gameState === 'GAME_OVER' && (
