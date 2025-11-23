@@ -27,7 +27,7 @@ function App() {
 
   return (
     // 1. Outer Container: Handles the Mobile Viewport (100dvh) and Centering
-    <div className="w-screen h-[100dvh] bg-black overflow-hidden flex items-center justify-center">
+    <div className="w-screen h-screen bg-black overflow-hidden flex items-center justify-center">
       
       {/* 2. Inner Wrapper: This is crucial for "stacking" the menu on top of the game */}
       <div className="relative w-full h-full max-w-[1000px] max-h-[600px]"> 
