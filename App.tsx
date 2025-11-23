@@ -26,8 +26,9 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-neutral-900 flex items-center justify-center p-4">
-      <div className="relative w-full max-w-[800px] aspect-[800/500]">
+    // UPDATED: Full screen, black background, no padding
+    <div className="w-screen h-screen bg-black overflow-hidden flex items-center justify-center">
+      <div className="relative w-full h-full">
         
         {/* Game Layer */}
         <GameCanvas 
@@ -36,6 +37,7 @@ function App() {
         />
 
         {/* Overlay Menus */}
+        {/* These will sit on top of the full-screen canvas */}
         {gameState === 'MENU' && <Menu onStart={handleStart} />}
         
         {gameState === 'GAME_OVER' && (
