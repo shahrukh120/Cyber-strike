@@ -444,7 +444,7 @@ const GameCanvas: React.FC<GameCanvasProps> = ({ onGameOver, gameStatus }) => {
   );
 
   return (
-    <div className="relative group select-none">
+   <div className="relative group select-none w-screen h-screen bg-black flex items-center justify-center overflow-hidden">
       <div className="absolute top-4 left-4 right-4 flex justify-between text-white font-arcade z-10 pointer-events-none">
         {/* P1 Stats */}
         <div className="w-1/3 pointer-events-auto">
@@ -478,11 +478,18 @@ const GameCanvas: React.FC<GameCanvasProps> = ({ onGameOver, gameStatus }) => {
         </div>
       </div>
       
-      <canvas 
+  <canvas 
         ref={canvasRef} 
         width={800} 
-        height={500} 
-        className="border-4 border-gray-900 bg-black rounded shadow-2xl w-full max-w-[800px] block mx-auto"
+        height={500}
+        // Removed: max-w-[800px], border-4 (optional), w-full
+        className="block shadow-2xl"
+        style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'contain',     // Ensures players don't look squashed
+            imageRendering: 'pixelated' // Keeps the retro look crisp
+        }}
       />
 
       {/* Virtual Controls Overlay - Only visible during play ideally, but keeping always for simplicity if desired, or conditional */}
