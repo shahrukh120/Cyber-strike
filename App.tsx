@@ -27,8 +27,8 @@ function App() {
 
   return (
     // UPDATED: Full screen, black background, no padding
-    <div className="w-screen h-screen bg-black overflow-hidden flex items-center justify-center">
-      <div className="relative w-full h-full">
+// Changed h-screen to h-[100dvh] to account for mobile address bars
+<div className="w-screen h-[100dvh] bg-black overflow-hidden flex items-center justify-center">
         
         {/* Game Layer */}
         <GameCanvas 
